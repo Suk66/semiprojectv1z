@@ -1,8 +1,6 @@
 package com.example.zzyzzy.semiprojectv1.service;
 
-import com.example.zzyzzy.semiprojectv1.domain.Board;
-import com.example.zzyzzy.semiprojectv1.domain.BoardDTO;
-import com.example.zzyzzy.semiprojectv1.domain.NewBoardDTO;
+import com.example.zzyzzy.semiprojectv1.domain.*;
 
 import java.util.List;
 
@@ -20,5 +18,14 @@ public interface BoardService {
 
     void readOneView(int bno);
 
-    boolean newBoard(NewBoardDTO newboardDTO);
+    boolean newBoard(NewBoardDTO newBoardDTO);
+
+    boolean newReply(NewReplyDTO newReplyDTO);
+
+    List<Reply> readReply(int pno);
+
+    boolean newComment(NewReplyDTO newReplyDTO);
+
+
+
 }

@@ -1,8 +1,6 @@
 package com.example.zzyzzy.semiprojectv1.repository;
 
-import com.example.zzyzzy.semiprojectv1.domain.Board;
-import com.example.zzyzzy.semiprojectv1.domain.BoardDTO;
-import com.example.zzyzzy.semiprojectv1.domain.NewBoardDTO;
+import com.example.zzyzzy.semiprojectv1.domain.*;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -33,4 +31,15 @@ public interface BoardRepository {
 
     @Insert("insert into boards (title, userid, contents) values (#{title}, #{userid}, #{contents})")
     int insertBoard(NewBoardDTO newBoardDTO);
+
+    @Insert("insert into reply (userid, comments, ref, pno) values (#{userid}, #{comments}, last_insert_id()+1, #{pno})")
+    int insertReply(NewReplyDTO newReplyDTO);
+
+    @Select("select * from replys where pno = #{pno} order by ref")
+    List<Reply>  selectReply(int pno);
+
+    @Insert("insert into replys (userid, comments, ref, pno) values (#{userid}, #{comments}, #{ref}, #{pno})")
+    int insertComment(NewReplyDTO newReplyDTO);
+
+
 }
