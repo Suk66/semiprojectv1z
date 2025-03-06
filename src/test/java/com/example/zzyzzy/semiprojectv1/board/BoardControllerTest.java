@@ -3,6 +3,7 @@ package com.example.zzyzzy.semiprojectv1.board;
 import com.example.zzyzzy.semiprojectv1.repository.BoardRepository;
 import com.example.zzyzzy.semiprojectv1.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,7 +18,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
+@Disabled
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional

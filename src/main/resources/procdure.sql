@@ -1,5 +1,6 @@
 -- 기존 저장프로시져 제거
 DROP PROCEDURE IF EXISTS insert_boards;
+commit;
 
 -- 프로시저 생성
 CREATE PROCEDURE insert_boards()
@@ -20,3 +21,5 @@ END;
 
 -- 프로시저 호출
 CALL insert_boards();
+
+select * from insert_boards();

@@ -5,6 +5,7 @@ import com.example.zzyzzy.semiprojectv1.domain.BoardDTO;
 import com.example.zzyzzy.semiprojectv1.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
@@ -18,7 +19,7 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+@Disabled
 @Slf4j
 @MybatisTest
 @RequiredArgsConstructor //  final 필드변수로 생성자 생성

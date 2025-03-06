@@ -6,23 +6,23 @@ import java.util.List;
 
 public interface BoardService {
 
-    List<BoardDTO> readBoard(int cpg);
+    BoardListDTO readBoard(int cpg);
 
-    int countBoard();
+    BoardReplyDTO readOneBoardReply(int bno);
 
     List<BoardDTO> findBoard(int cpg, String findtype, String findkey);
 
     int countfindBoard(String findtype, String findkey);
 
-    Board readOneBoard(int bno);
+//1.1    Board readOneBoard(int bno);
 
-    void readOneView(int bno);
+//1.2    void readOneView(int bno);
 
     boolean newBoard(NewBoardDTO newBoardDTO);
 
     boolean newReply(NewReplyDTO newReplyDTO);
 
-    List<Reply> readReply(int pno);
+//1.3    List<Reply> readReply(int pno);
 
     boolean newComment(NewReplyDTO newReplyDTO);
 
