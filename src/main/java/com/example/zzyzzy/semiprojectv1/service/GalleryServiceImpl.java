@@ -1,32 +1,19 @@
 package com.example.zzyzzy.semiprojectv1.service;
 
-<<<<<<< HEAD
+
 import com.example.zzyzzy.semiprojectv1.domain.Gallery;
-=======
+
 import com.example.zzyzzy.semiprojectv1.domain.*;
->>>>>>> upstream/master
+
 import com.example.zzyzzy.semiprojectv1.repository.GalleryRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-<<<<<<< HEAD
-
-import java.util.List;
-@Slf4j
-@Service
-@RequiredArgsConstructor
-public class GalleryServiceImpl implements GalleryService{
-    private final GalleryRepository galleryMapper;
-
-    @Override
-    public List<Gallery> selectGallery() {
-        return galleryMapper.selectGallery();
-    }
-=======
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.util.List;
+
+
 
 @Slf4j
 @Service
@@ -34,6 +21,7 @@ import java.util.List;
 public class GalleryServiceImpl implements GalleryService {
 
     private final GalleryRepository galleryMapper;
+    private final GalleryUploadService galleryUploadService;
 
     @Override
     public List<GalleryListDTO> selectGallery() {
@@ -61,11 +49,19 @@ public class GalleryServiceImpl implements GalleryService {
 
         // 첨부된 파일들을 업로드 처리하고
         // 알아낸 글번호로 첨부된 파일들에 대한 정보를 gallery_images에 저장
+        if (!ginames.isEmpty()) {  // 첨부파일이 존재한다면
+            // 업로드 처리후 업로드된 파일들의 정보를 리스트형태로 받아옴
+            List<NewGalleryImageDTO> gis = galleryUploadService.processUpload(ginames, gno);
 
-        // 첨부된 파일들 중 첫번째 이미지 파일을 썸네일 처리
-
+            // 업로드된 파일의 정보를 gallery_images 테이블에 저장
+            // 즉, 첨부된 파일정보를 개별 행으로 저장
+            for(NewGalleryImageDTO gi : gis) {
+                galleryMapper.insertGalleryImage(gi);
+            }
+            // 첨부된 파일들 중 첫번째 이미지 파일을 썸네일 처리
+            galleryUploadService.makeThumbnail(
+                    gal.getSimgname(), gis.get(0).getImgname());
+        }
         return false;
     }
-
->>>>>>> upstream/master
 }

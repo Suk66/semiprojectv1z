@@ -1,20 +1,5 @@
 package com.example.zzyzzy.semiprojectv1.repository;
 
-<<<<<<< HEAD
-import com.example.zzyzzy.semiprojectv1.domain.Gallery;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
-@Mapper
-public interface GalleryRepository {
-    @Select("select gno, title, userid, regdate, thumbs, views, simgname from gallerys order by gno desc")
-    List<Gallery> selectGallery();
-
-
-
-}
-=======
 import com.example.zzyzzy.semiprojectv1.domain.*;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -39,5 +24,5 @@ public interface GalleryRepository {
     List<GalleryImage> selectGalleryImages(int gno);
 
     int insertGallery(NewGalleryDTO gal);
+
 }
->>>>>>> upstream/master
