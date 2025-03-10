@@ -16,12 +16,20 @@ public class BoardListDTO {
 
     public BoardListDTO(int cpg, int totalItems, int pageSize, List<?> bdlist) {
         this.cpg = cpg;
+<<<<<<< HEAD
         this.cntpg = (int) Math.ceil((double)totalItems/pageSize); // 정수나누기 정수는 더블형이라 형변환.
         this.bdlist = bdlist;
         // PageNation 범위계산
         this.stblk = ((cpg -1 ) / 10) * 10 + 1;
         this.edblk = Math.min(stblk + 10 -1, cntpg);
 
+=======
+        this.cntpg = (int) Math.ceil((double) totalItems / pageSize);
+        this.bdlist = bdlist;
+        // 페이지네이션 범위계산
+        this.stblk = ((cpg - 1) / 10) * 10 + 1;
+        this.edblk = Math.min(stblk + 10 - 1, cntpg);
+>>>>>>> upstream/master
     }
 }
 

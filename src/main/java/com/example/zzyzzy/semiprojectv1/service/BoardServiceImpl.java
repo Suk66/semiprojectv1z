@@ -26,9 +26,15 @@ public class BoardServiceImpl implements BoardService {
         int totalItems = boardMapper.countBoard();
         List<BoardDTO> boards = boardMapper.selectBoard(stnum, pageSize);
 
+<<<<<<< HEAD
 
         return new BoardListDTO(cpg, totalItems, pageSize, boards);
     }
+=======
+        return new BoardListDTO(cpg, totalItems, pageSize, boards);
+    }
+
+>>>>>>> upstream/master
     @Transactional
     @Override
     public BoardReplyDTO readOneBoardReply(int bno) {
@@ -67,6 +73,7 @@ public class BoardServiceImpl implements BoardService {
 
     //@Override
     //public Board readOneBoard(int bno) {
+<<<<<<< HEAD
     //    return boardMapper.selectOneBoard(bno);
     //}
 
@@ -78,6 +85,19 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public boolean newBoard(NewBoardDTO newboardDTO) {
         int result = boardMapper.insertBoard(newboardDTO);
+=======
+    //     return boardMapper.selectOneBoard(bno);
+    //}
+
+    //@Override
+    //public void readOneView(int bno) {
+    //    boardMapper.updateViewOne(bno);
+    //}
+
+    @Override
+    public boolean newBoard(NewBoardDTO newBoardDTO) {
+        int result = boardMapper.insertBoard(newBoardDTO);
+>>>>>>> upstream/master
         return result > 0;
     }
 
@@ -87,15 +107,25 @@ public class BoardServiceImpl implements BoardService {
         return result > 0;
     }
 
+<<<<<<< HEAD
 //    @Override
 //    public List<Reply> readReply(int pno) {
 //        return boardMapper.selectReply(pno);
 //    }
+=======
+    //@Override
+    //public List<Reply> readReply(int pno) {
+    //    return boardMapper.selectReply(pno);
+    //}
+>>>>>>> upstream/master
 
     @Override
     public boolean newComment(NewReplyDTO newReplyDTO) {
         int result = boardMapper.insertComment(newReplyDTO);
         return result > 0;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 }

@@ -32,7 +32,11 @@
                     </td>
                     <td colspan="3"  class="text-end">
                         <button type="button" class="btn btn-primary" id="newbdbtn"
+<<<<<<< HEAD
                         th:if="${session.loginUser ne null}"><i class="fas fa-pen"></i> 글쓰기</button>
+=======
+                            th:if="${session.loginUser ne null}"><i class="fas fa-pen"></i> 글쓰기</button>
+>>>>>>> upstream/master
                     </td>
                 </tr>
                 <tr class="table-light">
@@ -64,14 +68,16 @@
                                 <a th:href="|${pglink}${bdsdto.cpg - 1}|" class="page-link">이전</a></li>
 
                             <th:block th:each="i : ${#numbers.sequence(bdsdto.stblk, bdsdto.edblk)}">
+<<<<<<< HEAD
                                 <!-- 출력하는 페이지가 총페이지 수 이하일때 출력 -->
                                 **위에 코드 추가로 변경.**
 <!--                                <th:block th:if="${i le cntpg}">-->
+=======
+>>>>>>> upstream/master
                                 <!-- i 와 cpg가 일치하지 않으면 평범하게 출력 -->
                                 <li th:class="${(i ne bdsdto.cpg) ? 'page-item' : 'page-item active'}">
                                     <a th:href="|${pglink}${i}|"
                                         class="page-link" th:text="${i}">1</a></li>
-                                </th:block>
                             </th:block>
 
                             <li class="page-item">
@@ -100,7 +106,11 @@
                 }
             });
 
+<<<<<<< HEAD
             // 옵셔널 체이닝 optional chaining
+=======
+            // 옵셔널 체이닝
+>>>>>>> upstream/master
             newbdbtn?.addEventListener('click', (e) => {
                 location.href = `/board/write`;
             });

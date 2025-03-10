@@ -28,6 +28,11 @@
 
         .rpybg { background: lime; padding: 5px; }
 
+        .reply-border { border-top: 2px solid silver;
+            border-bottom:2px solid silver }
+
+        .pushend { float: right }
+
         .pre { white-space: pre-wrap } /*본문글 줄바꿈 표시*/
     </style>
 </head>
@@ -46,7 +51,11 @@
                         다음게시물</button></td>
                     <td class="text-end">
                         <button type="button" class="btn btn-primary" id="newbdbtn"
+<<<<<<< HEAD
                         th:if="${session.loginUser ne null}">
+=======
+                         th:if="${session.loginUser ne null}">
+>>>>>>> upstream/master
                             새글쓰기</button></td>
                 </tr>
                 </thead>
@@ -87,6 +96,7 @@
                         </td>
                         </th:block>
 
+<<<<<<< HEAD
                         <th:block th:if="${rp.rno eq rp.ref}">
                             <td class="text-left">&nbsp;</td>
                             <td>
@@ -94,6 +104,15 @@
                                     <span class="pushend" th:text="${rp.regdate}">작성일</span></div>
                                 <p class="py-1 pre" th:text="${rp.comments}"></p>
                             </td>
+=======
+                        <th:block th:if="${rp.rno ne rp.ref}">
+                        <td class="text-left">&nbsp;</td>
+                        <td>
+                            <div class="rpybg"><span th:text="${rp.userid}">작성자</span>
+                                <span class="pushend" th:text="${rp.regdate}">작성일</span></div>
+                            <p class="py-1 pre" th:text="${rp.comments}"></p>
+                        </td>
+>>>>>>> upstream/master
                         </th:block>
                     </tr>
                 </table><!-- 댓글/대댓글 목록 -->
@@ -105,10 +124,17 @@
                             <div class="col text-center"><label th:text="${session.loginUser.userid}"></label></div>
 
                             <div class="col-8"><textarea id="comments" rows="10" name="comments"
+<<<<<<< HEAD
                                                          class="form-control col-7"></textarea></div>
 
                             <div class="col"><button type="button" id="replybtn"
                                                      class="btn btn-dark">
+=======
+                                 class="form-control col-7"></textarea></div>
+
+                            <div class="col"><button type="button" id="replybtn"
+                                 class="btn btn-dark">
+>>>>>>> upstream/master
                                 <i class="fa fa-commenting"></i> 댓글쓰기</button></div>
                         </div>
                         <input type="hidden" name="userid" value="abc123" />
@@ -116,7 +142,10 @@
                     </form>
                 </div><!-- 댓글쓰기 -->
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
             </div>
         </main>
 
@@ -154,10 +183,14 @@
             let replybtn = document.querySelector("#replybtn");
             let cmmtbtn = document.querySelector("#cmmtbtn");
             let cmtModal = document.querySelector("#cmtModal");
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
             // 질의문자열에서 bno를 자바스크립트 코드에 삽입
             const bno = [[${param.bno[0]}]];
 
-            newbdbtn.addEventListener('click', (e) => {
+            newbdbtn?.addEventListener('click', (e) => {
                 location.href = `/board/write`;
             });
             rmvbdbtn.addEventListener('click', (e) => {
@@ -168,24 +201,39 @@
             lstbdbtn.addEventListener('click', (e) => {
                 location.href = `/board/list`;
             });
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
             replybtn?.addEventListener('click', (e) => {
                 const comments = document.querySelector('#comments');
                 const replyfrm = document.querySelector('#replyfrm');
                 if (comments.value === '') {
+<<<<<<< HEAD
                     alert('댓글을 작성하세요!!')
+=======
+                    alert('댓글을 작성하세요!!');
+>>>>>>> upstream/master
                     return;
                 }
                 replyfrm.action = '/board/reply';
                 replyfrm.submit();
             });
 
+<<<<<<< HEAD
              // replybtn?.addEventListener('click', (e) => {...});
 
+=======
+>>>>>>> upstream/master
             cmmtbtn.addEventListener('click', (e) => {
                 const cmmt = document.querySelector('#cmmt');
                 const cmmtfrm = document.querySelector('#cmmtfrm');
                 if (cmmt.value === '') {
+<<<<<<< HEAD
                     alert('대댓글을 작성하세요');
+=======
+                    alert('대댓글을 작성하세요!!');
+>>>>>>> upstream/master
                     return;
                 }
                 cmmtfrm.action = '/board/cmmt';
@@ -194,15 +242,23 @@
 
             // 대댓글창이 띄워지면, 댓글번호를 대댓글작성폼에 초기화함
             // data-xx : 사용자 정의 요소
+<<<<<<< HEAD
 
             cmtModal.addEventlistener('show.bs.modal', (e) => {
                 // 이벤트가 발생한 특정값을 가져옴.
+=======
+            cmtModal.addEventListener('show.bs.modal', (e) => {
+                // 이벤트가 발생한 요소의 특정 속성값을 가져옴
+>>>>>>> upstream/master
                 const refVal = e.relatedTarget.getAttribute('data-ref');
                 let refno = document.querySelector('#refno');
                 refno.value = refVal;
             });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
         </script>
     </th:block>
 

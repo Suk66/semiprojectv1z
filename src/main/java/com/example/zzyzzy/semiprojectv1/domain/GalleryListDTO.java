@@ -7,15 +7,14 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-public class Reply {
-    private String rno;
-    private String comments;
+public class GalleryListDTO {
+    private int gno;
+    private String title;
     private String userid;
     private LocalDateTime regdate;
-    private String ref;
-    private String pno;
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/master
+    private String thumbs;
+    private String views;
+    private String simgname;
 }
+
+

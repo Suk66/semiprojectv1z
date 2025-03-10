@@ -24,10 +24,19 @@ create table if not exists replys (
     userid varchar(18) not null,
     comments text not null,
     regdate datetime default current_timestamp,
+<<<<<<< HEAD
     ref int not null,
     pno int not null,
     primary key (rno)
     );
+=======
+    ref  int not null,
+    pno  int not null,
+    primary key (rno)
+    -- foreign key (userid) references members (userid)
+    -- foreign key (pno) references boards (bno)
+);
+>>>>>>> upstream/master
 
 create table if not exists gallerys (
     gno int auto_increment,
@@ -52,5 +61,8 @@ create table if not exists gallery_images (
     foreign key (gno) references gallerys (gno)
 );
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> upstream/master

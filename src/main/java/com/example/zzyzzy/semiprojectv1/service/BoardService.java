@@ -14,6 +14,7 @@ public interface BoardService {
 
     int countfindBoard(String findtype, String findkey);
 
+<<<<<<< HEAD
 //1.1    Board readOneBoard(int bno);
 
 //1.2    void readOneView(int bno);
@@ -28,4 +29,17 @@ public interface BoardService {
 
 
 
+=======
+    //Board readOneBoard(int bno);
+
+    //void readOneView(int bno);
+
+    boolean newBoard(NewBoardDTO newBoardDTO);
+
+    boolean newReply(NewReplyDTO newReplyDTO);
+
+    //List<Reply> readReply(int pno);
+
+    boolean newComment(NewReplyDTO newReplyDTO);
+>>>>>>> upstream/master
 }

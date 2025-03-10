@@ -36,7 +36,11 @@ public class BoardServiceTest {
         int cpg = 1;  // 현재 페이지가 1일때 게시글들을 읽어옴
 
         // When
+<<<<<<< HEAD
 //        List<BoardDTO> results = boardService.readBoard(cpg);
+=======
+        //List<BoardDTO> results = boardService.readBoard(cpg);
+>>>>>>> upstream/master
         BoardListDTO results = boardService.readBoard(cpg);
 
         // Then
@@ -81,6 +85,10 @@ public class BoardServiceTest {
         int bno = 3000;
 
         // When
+<<<<<<< HEAD
+=======
+        //Board result = boardService.readOneBoard(bno);
+>>>>>>> upstream/master
         BoardReplyDTO result = boardService.readOneBoardReply(bno);
 
         // Then

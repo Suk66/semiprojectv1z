@@ -5,7 +5,11 @@
 
     <th:block layout:fragment="content">
         <main id="content">
+<<<<<<< HEAD
             <h2><i class="fa-solid fa-circle-user"></i>">이미지 갤러리</h2>
+=======
+            <h2><i class="fa-solid fa-image"></i> 이미지 갤러리</h2>
+>>>>>>> upstream/master
 
             <div class="row mt-5 mb-3">
                 <div class="row offset-1 col-7">
@@ -36,25 +40,50 @@
 
                 <div class="col-10 card" style="width: 18rem"
                 th:each="gal : ${gals}">
+<<<<<<< HEAD
                     <a>
                         <img src="http://localhost/cdn/_small/cowmeat01_small.jpg"
+=======
+                    <a th:href="|/gallery/view/${gal.gno}|">
+                        <img th:src="|http://localhost/cdn/_small/${gal.simgname}|"
+>>>>>>> upstream/master
                              class="card-img-top" alt="..."></a>
 
                     <div class="card-body">
                         <h5 class="card-title" th:text="${gal.title}">갤러리 제목</h5>
                         <p><span th:text="${gal.userid}">작성자</span>
                             <span style="float: right" th:text="${#strings.substring(gal.regdate,0,10)}">2023-07-20</span></p>
+<<<<<<< HEAD
                         <p><span><i class="fa-regular fa-thumbs-up"> [[${gal.thumbs}]]</i>999</span>
                             <span style="float: right">
                        <i class="fa-regular fa-eye"></i> [[${gal.views}]]</span></p>
+=======
+                        <p><span><i class="fa-regular fa-thumbs-up"></i> [[${gal.thumbs}]]</span>
+                            <span style="float: right">
+                            <i class="fa-regular fa-eye"></i> [[${gal.views}]]</span></p>
+>>>>>>> upstream/master
                     </div>
                 </div>
 
             </div><!-- 갤러리 이미지 리스트 -->
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> upstream/master
         </main>
+    </th:block>
+
+    <th:block layout:fragment="script">
+        <script src="/js/gallery.js"></script>
+        <script th:inline="javascript">
+            let newgalbtn = document.querySelector("#newgalbtn");
+
+            newgalbtn?.addEventListener('click', (e) => {
+                location.href = `/gallery/write`;
+            });
+        </script>
     </th:block>
 
 </html>
